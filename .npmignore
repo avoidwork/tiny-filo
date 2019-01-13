@@ -1,0 +1,11 @@
+/.idea/
+/node_modules/
+/lib/tiny-filo.min.js
+/lib/tiny-filo.min.js.map
+/test/
+/src/
+.git
+.gitignore
+.eslintrc
+.travis.yml
+Gruntfile.js

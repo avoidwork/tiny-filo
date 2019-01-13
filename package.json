@@ -1,0 +1,45 @@
+{
+  "name": "tiny-filo",
+  "description": "Tiny FILO cache for Client or Server",
+  "version": "1.0.0",
+  "homepage": "https://github.com/avoidwork/tiny-filo",
+  "author": "Jason Mulligan <jason.mulligan@avoidwork.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/avoidwork/tiny-filo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/avoidwork/tiny-filo/issues"
+  },
+  "license": "BSD-3-Clause",
+  "main": "lib/tiny-filo.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "engineStrict": true,
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-minify": "^0.5.0",
+    "grunt": "^1.0.3",
+    "grunt-cli": "^1.3.2",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-nodeunit": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-eslint": "^21.0.0"
+  },
+  "keywords": [
+    "filo",
+    "cache",
+    "tiny",
+    "client",
+    "server",
+    "first in",
+    "last out",
+    "first",
+    "last"
+  ]
+}
