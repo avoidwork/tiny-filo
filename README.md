@@ -12,7 +12,7 @@ const cache = filo(max, ttl = 0);
 
 Clears the contents of the cache
 
-	return {Object} filo instance
+	return {Object} FILO instance
 
 **Example**
 
@@ -26,7 +26,7 @@ cache.clear();
 Removes item from cache
 
 	param  {String} key Item key
-	return {Object}     filo instance
+	return {Object}     FILO instance
 
 **Example**
 
@@ -39,7 +39,7 @@ cache.delete("myKey");
 
 Evicts the last item from cache
 
-	return {Object} filo instance
+	return {Object} FILO instance
 
 **Example**
 
@@ -94,7 +94,7 @@ Sets item in cache
 
 	param  {String} key   Item key
 	param  {Mixed}  value Item value
-	return {Object}       filo instance
+	return {Object}       FILO instance
 
 **Example**
 
