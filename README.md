@@ -37,7 +37,7 @@ cache.delete("myKey");
 ## evict
 ### Method
 
-Evicts the least recently used item from cache
+Evicts the last item from cache
 
 	return {Object} filo instance
 
