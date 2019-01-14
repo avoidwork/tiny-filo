@@ -50,7 +50,7 @@ cache.evict();
 ## get
 ### Method
 
-Gets cached item and moves it to the front
+Gets item in cache
 
 	param  {String} key Item key
 	return {Mixed}      Undefined or Item value
@@ -87,24 +87,10 @@ const cache = filo(500);
 cache.max; // 500
 ```
 
-## remove
-### Method
-
-(Deprecated) Removes item from cache
-
-	param  {String} key Item key
-	return {Object}     filo instance
-
-**Example**
-
-```javascript
-cache.remove("myKey");
-```
-
 ## set
 ### Method
 
-Sets item in cache as `first`
+Sets item in cache
 
 	param  {String} key   Item key
 	param  {Mixed}  value Item value
