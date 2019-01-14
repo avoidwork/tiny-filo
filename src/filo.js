@@ -55,6 +55,8 @@
 			this.last = item.prev;
 			this.last.next = null;
 			this.size--;
+
+			return this;
 		}
 
 		get (key) {
