@@ -65,7 +65,7 @@
 			if (this.has(key)) {
 				const item = this.items[key];
 
-				if (this.ttl > 0 && item.expiry >= new Date().getTime()) {
+				if (this.ttl > 0 && item.expiry <= new Date().getTime()) {
 					this.delete(key);
 				} else {
 					result = item.value;
