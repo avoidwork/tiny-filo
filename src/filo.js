@@ -81,7 +81,10 @@
 
 		set (key, value) {
 			if (this.has(key)) {
-				this.items.set(key, value);
+				const item = this.items.get(key);
+
+				item.value = value;
+				this.items.set(key, item);
 			} else {
 				if (this.max > 0 && this.size === this.max) {
 					this.evict();
