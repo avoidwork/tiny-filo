@@ -37,12 +37,7 @@ function bench (n = 0, x = 1, type = "set") {
 
 		const timer = precise().start();
 
-		try {
-			populate(cache, n);
-		} catch (err) {
-			console.error(err.status);
-		}
-
+		populate(cache, n);
 		timer.stop();
 
 		const f = timer.diff() / 1e6;
