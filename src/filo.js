@@ -1,7 +1,7 @@
 	class FILO {
 		constructor (max = 0, ttl = 0) {
 			this.first = null;
-			this.items = new Map();
+			this.items = {};
 			this.last = null;
 			this.max = max;
 			this.size = 0;
@@ -9,12 +9,12 @@
 		}
 
 		has (key) {
-			return this.items.has(key);
+			return key in this.items;
 		}
 
 		clear () {
 			this.first = null;
-			this.items.clear();
+			this.items = {};
 			this.last = null;
 			this.size = 0;
 
@@ -23,9 +23,9 @@
 
 		delete (key) {
 			if (this.has(key)) {
-				const item = this.items.get(key);
+				const item = this.items[key];
 
-				this.items.delete(key);
+				delete this.items[key];
 				this.size--;
 
 				if (item.prev !== null) {
@@ -51,7 +51,7 @@
 		evict () {
 			const item = this.last;
 
-			this.items.delete(item.key);
+			delete this.items[item.key];
 			this.last = item.prev;
 			this.last.next = null;
 			this.size--;
@@ -63,7 +63,7 @@
 			let result;
 
 			if (this.has(key)) {
-				const item = this.items.get(key);
+				const item = this.items[key];
 
 				if (this.ttl > 0 && item.expiry <= new Date().getTime()) {
 					this.delete(key);
@@ -76,26 +76,26 @@
 		}
 
 		keys () {
-			return Array.from(this.items.keys());
+			return Object.keys(this.items);
 		}
 
 		set (key, value) {
 			if (this.has(key)) {
-				this.items.set(key, value);
+				const item = this.items[key];
+
+				item.value = value;
 			} else {
 				if (this.max > 0 && this.size === this.max) {
 					this.evict();
 				}
 
-				const item = {
+				const item = this.items[key] = {
 					expiry: this.ttl > 0 ? new Date().getTime() + this.ttl : this.ttl,
-					key,
+					key: key,
 					prev: this.last,
 					next: null,
 					value
 				};
-
-				this.items.set(key, item);
 
 				if (++this.size === 1) {
 					this.first = item;

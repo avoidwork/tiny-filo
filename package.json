@@ -1,7 +1,7 @@
 {
   "name": "tiny-filo",
   "description": "Tiny FILO cache for Client or Server",
-  "version": "1.1.0",
+  "version": "1.0.6",
   "homepage": "https://github.com/avoidwork/tiny-filo",
   "author": "Jason Mulligan <jason.mulligan@avoidwork.com>",
   "repository": {
@@ -29,8 +29,7 @@
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-nodeunit": "^2.0.0",
     "grunt-contrib-watch": "^1.1.0",
-    "grunt-eslint": "^21.0.0",
-    "precise": "^1.1.0"
+    "grunt-eslint": "^21.0.0"
   },
   "keywords": [
     "filo",

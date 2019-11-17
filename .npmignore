@@ -9,4 +9,3 @@
 .eslintrc
 .travis.yml
 Gruntfile.js
-benchmark.js
