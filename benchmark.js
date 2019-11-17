@@ -42,7 +42,7 @@ function bench (n = 0, x = 1, type = "set") {
 
 		const f = timer.diff() / 1e6;
 
-		console.log(`Run ${x} ${x === 1 ? "Set" : "Evict"} (${n === 0 ? "Low Keys" : "High Keys"}): ${f} ms (${Math.ceil(nth / f)} ops/ms)`);
+		console.log(`Run ${x} ${x === 1 ? "Set" : "Evict"} (${n === 0 ? "Low Keys" : "High Keys"}): ${f} ms (${Math.floor(nth / f)} ops/ms)`);
 	} else if (type === "get") {
 		const timer = precise().start();
 
